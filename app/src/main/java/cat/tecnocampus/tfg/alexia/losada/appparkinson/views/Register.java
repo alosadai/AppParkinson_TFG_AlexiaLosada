@@ -1,4 +1,4 @@
-package cat.tecnocampus.tfg.alexia.losada.appparkinson;
+package cat.tecnocampus.tfg.alexia.losada.appparkinson.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,8 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import cat.tecnocampus.tfg.alexia.losada.appparkinson.R;
 
 public class Register extends AppCompatActivity {
 

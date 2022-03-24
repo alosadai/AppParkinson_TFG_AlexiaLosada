@@ -10,28 +10,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.Doctor"
+            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.views.Doctor"
             android:exported="false" />
         <activity
-            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.Feelings"
+            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.views.Feelings"
             android:exported="false" />
         <activity
-            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.Circle"
+            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.views.Circle"
             android:exported="false" />
         <activity
-            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.Text"
+            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.views.Text"
             android:exported="false" />
         <activity
-            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.Home"
+            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.views.Home"
             android:exported="false" />
         <activity
-            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.Register"
+            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.views.Register"
             android:exported="false" />
         <activity
-            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.Login"
+            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.views.Login"
             android:exported="false" />
         <activity
-            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.MainActivity"
+            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.views.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

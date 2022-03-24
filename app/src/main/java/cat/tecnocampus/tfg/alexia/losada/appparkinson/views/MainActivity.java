@@ -1,4 +1,4 @@
-package cat.tecnocampus.tfg.alexia.losada.appparkinson;
+package cat.tecnocampus.tfg.alexia.losada.appparkinson.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import cat.tecnocampus.tfg.alexia.losada.appparkinson.R;
 
 public class MainActivity extends AppCompatActivity {
 
