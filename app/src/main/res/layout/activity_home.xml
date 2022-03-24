@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".Home">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="94dp"
+            android:layout_height="94dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            app:cardBackgroundColor="@color/light_bronze"
+            app:cardCornerRadius="45dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="2dp"
+                app:cardCornerRadius="45dp"
+                app:strokeColor="@color/light_bronze">
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:contentDescription="@string/logo"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/logo_white" />
+
+            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/welcome_back"
+            android:layout_width="208dp"
+            android:layout_height="94dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="@string/welcome_back"
+            android:textAppearance="@style/welcome_back"
+            android:textColor="#EF6C00" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/diagnosis"
+            android:contentDescription="@string/diagnosis" />
+
+        <Button
+            android:id="@+id/diagnosis_button"
+            android:layout_marginLeft="20dp"
+            android:layout_width="230dp"
+            android:layout_height="50dp"
+            android:background="@drawable/home_buttons"
+            android:textColor="@color/black"
+            android:text="@string/registre_diari"
+            android:textAllCaps="false"
+             />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/doctor"
+            android:contentDescription="@string/doctor" />
+
+        <Button
+            android:id="@+id/doctor_button"
+            android:layout_marginLeft="20dp"
+            android:layout_width="230dp"
+            android:layout_height="50dp"
+            android:background="@drawable/home_buttons"
+            android:textColor="@color/black"
+            android:text="@string/doctor"
+            android:textAllCaps="false"
+            />
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

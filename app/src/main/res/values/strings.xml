@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">AppParkinson</string>
+    <string name="iniciar_ses">Iniciar sessió</string>
+    <string name="registrar_s">Registrar-se</string>
+    <string name="title_activity_login">Login</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="email">Correu electronic</string>
+    <string name="password">Contrasenya</string>
+    <string name="name">Nom</string>
+    <string name="surname">Cognoms</string>
+    <string name="showPassword">Mostrar contrasenya</string>
+    <string name="welcome_back">Hola de nou</string>
+    <string name="diagnosis">Diagnosis</string>
+    <string name="logo">logo</string>
+    <string name="registre_diari">Registre diari</string>
+    <string name="doctor">Doctor</string>
+    <string name="metge">metge</string>
+    <string name="go_back">Torna enrere</string>
+    <string name="explaining">PRESIONA TANTS COPS COM PUGUIS EL CENTRE DEL CERCLE</string>
+    <string name="okay">D\'acord</string>
+    <string name="thanks">Gracies per realitzar el registre diari!</string>
+    <string name="cont">Continuar</string>
+    <string name="feelings">Com et sents avui?</string>
+    <string name="validate">Validar</string>
+
+</resources>

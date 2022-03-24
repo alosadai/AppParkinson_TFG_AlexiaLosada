@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        tools:context=".Feelings" >
+
+        <TextView
+            android:id="@+id/com_et_sent"
+            android:layout_width="216dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/feelings"
+            android:textAppearance="@style/feelings"
+            android:gravity="center_horizontal|top"
+            />
+
+        <Button
+                android:id="@+id/answer_1"
+                android:layout_width="303dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:background="@drawable/feelings_answer"
+                />
+
+        <Button
+                android:id="@+id/answer_2"
+                android:layout_width="303dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:background="@drawable/feelings_answer"
+                />
+
+        <Button
+                android:id="@+id/answer_3"
+                android:layout_width="303dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:background="@drawable/feelings_answer"
+                />
+
+        <Button
+                android:id="@+id/answer_4"
+                android:layout_width="303dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:background="@drawable/feelings_answer"
+                />
+
+            <Button
+                android:id="@+id/answer_5"
+                android:layout_width="303dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:background="@drawable/feelings_answer"
+                />
+
+
+</LinearLayout>
+</ScrollView>

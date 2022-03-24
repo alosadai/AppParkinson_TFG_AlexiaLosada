@@ -1,0 +1,41 @@
+package cat.tecnocampus.tfg.alexia.losada.appparkinson;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+public class MainActivity extends AppCompatActivity {
+
+    Button registerButton, loginButton;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        registerButton = findViewById(R.id.register_button);
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                registrarse();
+            }
+        });
+        loginButton = findViewById(R.id.login_button);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                login();
+            }
+        });
+    }
+
+    private void registrarse(){
+        Intent intent = new Intent(this, Register.class);
+        startActivity(intent);
+    }
+
+    private void login(){
+        Intent intent = new Intent(this, Login.class);
+        startActivity(intent);
+    }
+}
