@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -26,8 +27,9 @@ Doctor extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
     private String userId;
-    private Button validar;
+    private Button validar, goBack;
     private EditText email;
+    private TextView textEmail, emailAct;
 
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
@@ -39,11 +41,16 @@ Doctor extends AppCompatActivity {
         layout = findViewById(R.id.back_layout);
         validar = findViewById(R.id.validate);
         email = findViewById(R.id.email);
+        textEmail = findViewById(R.id.textEmail);
+        emailAct = findViewById(R.id.emailAct);
+        goBack = findViewById(R.id.back_button);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
 
         userId = firebaseAuth.getCurrentUser().getUid();
+
+        infoEmail();
 
         validar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +60,13 @@ Doctor extends AppCompatActivity {
         });
 
         layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+        goBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
@@ -69,34 +83,34 @@ Doctor extends AppCompatActivity {
             return;
         }
 
-        DocumentReference docRef = firebaseFirestore.collection("user").document(firebaseAuth.getCurrentUser().getUid());
+        modifyEmail(semail);
+    }
 
+    private void modifyEmail(String semail){
+        DocumentReference docRef = firebaseFirestore.collection("user").document(userId);
+        docRef.update("doctor", semail);
+        infoEmail();
+    }
+
+    private void infoEmail(){
+
+        DocumentReference docRef = firebaseFirestore.collection("user").document(userId);
         docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 User user = documentSnapshot.toObject(User.class);
-                modifyEmail(user.getDoctor(), semail);
+                if(user.getDoctor() == ""){
+                    textEmail.setText(R.string.textNoEmail);
+                    emailAct.setText(" ");
+                } else {
+                    textEmail.setText(R.string.textEmail);
+                    emailAct.setText(user.getDoctor());
+                }
+
             }
         });
 
-
     }
-
-    private void modifyEmail(String currentEmail, String semail){
-
-
-        if(currentEmail  == ""){
-            //TODO: Avis canvi email
-            //openDialog(); no funciona
-        }
-        DocumentReference docRef = firebaseFirestore.collection("user").document(firebaseAuth.getCurrentUser().getUid());
-        docRef.update("doctor", semail);
-    }
-
-    /* void openDialog() {
-        DialogClassDoctor dialogClassDoctor = new DialogClassDoctor();
-        dialogClassDoctor.show(getSupportFragmentManager(), "exemple dialog");
-    }*/
 
 
 }
