@@ -1,4 +1,4 @@
-package cat.tecnocampus.tfg.alexia.losada.appparkinson;
+package cat.tecnocampus.tfg.alexia.losada.appparkinson.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import cat.tecnocampus.tfg.alexia.losada.appparkinson.R;
 
 public class Text extends AppCompatActivity {
 

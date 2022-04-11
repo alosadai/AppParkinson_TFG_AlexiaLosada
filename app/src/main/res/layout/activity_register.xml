@@ -12,7 +12,7 @@
         android:background="@color/white"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        tools:context=".Register" >
+        tools:context=".views.Register" >
 
         <View
             android:id="@+id/charcoal_wi"

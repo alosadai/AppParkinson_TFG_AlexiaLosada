@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "672808572750",
+    "project_id": "appparkinson-a221b",
+    "storage_bucket": "appparkinson-a221b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672808572750:android:39d774e36cc45a3b4db01f",
+        "android_client_info": {
+          "package_name": "cat.tecnocampus.tfg.alexia.losada.appparkinson"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "672808572750-kducog3qd18fkl3uk6p7lvqo6n8v0v0l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiDB5i1YjATZOgF_7RrmY2-50M_i9l1ZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "672808572750-kducog3qd18fkl3uk6p7lvqo6n8v0v0l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672808572750:android:833b47606c9b8bdf4db01f",
+        "android_client_info": {
+          "package_name": "cat.tecnocampus.tfg.alexialosadafors.appparkinson"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "672808572750-kducog3qd18fkl3uk6p7lvqo6n8v0v0l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiDB5i1YjATZOgF_7RrmY2-50M_i9l1ZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "672808572750-kducog3qd18fkl3uk6p7lvqo6n8v0v0l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
