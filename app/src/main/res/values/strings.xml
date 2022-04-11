@@ -34,5 +34,7 @@
     <string name="Millor">Millor que ahir</string>
     <string name="Malament">Malament</string>
     <string name="MMalament">Molt malament</string>
+    <string name="textEmail">Correu electronic actual és:</string>
+    <string name="textNoEmail">No tens cap doctor assignat</string>
 
 </resources>

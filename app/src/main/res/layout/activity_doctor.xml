@@ -37,13 +37,36 @@
             android:textAppearance="@style/go_back" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/textEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:text="@string/textEmail"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:id="@+id/emailAct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        />
+
+
     <EditText
         android:id="@+id/email"
         android:layout_width="328dp"
         android:layout_height="75dp"
         android:gravity="center_vertical"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="200dp"
         android:background="@drawable/email"
         android:hint="@string/email"
         android:drawableLeft="@drawable/dctor"
