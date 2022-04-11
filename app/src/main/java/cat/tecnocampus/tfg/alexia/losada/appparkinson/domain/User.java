@@ -1,36 +1,22 @@
 package cat.tecnocampus.tfg.alexia.losada.appparkinson.domain;
 
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
-@Entity
 public class User {
-
-    @PrimaryKey(autoGenerate = true)
-    private int id;
 
     private String email;
     private String name;
     private String surname;
-    private String password;
+    private String doctor;
 
     public User(){
 
     }
 
-    public User(String email, String name, String surname, String password) {
+    public User(String email, String name, String surname) {
         this.email = email;
         this.name = name;
         this.surname = surname;
-        this.password = password;
-    }
+        this.doctor = "";
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getEmail() {
@@ -57,11 +43,12 @@ public class User {
         this.surname = surname;
     }
 
-    public String getPassword() {
-        return password;
+    public String getDoctor(){
+        return doctor;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setDoctor(String doctor){
+        this.doctor = doctor;
     }
+
 }

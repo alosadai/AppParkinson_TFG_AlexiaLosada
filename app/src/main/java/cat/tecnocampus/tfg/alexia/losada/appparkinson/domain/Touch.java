@@ -1,55 +1,46 @@
 package cat.tecnocampus.tfg.alexia.losada.appparkinson.domain;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+import java.util.ArrayList;
+import java.util.List;
+
 public class Touch {
 
-    @PrimaryKey
-    private int id;
-    private int logId;
-    private float axisX;
-    private float axisY;
+    private String logId;
+    private List<String> touchs;
 
     public Touch(){}
 
-    public Touch(int id, int logId, float axisX, float axisY) {
-        this.id = id;
-        this.logId = logId;
-        this.axisX = axisX;
-        this.axisY = axisY;
+    public Touch(List<String> touchs){
+        this.logId = "";
+        this.touchs = touchs;
     }
 
-    public int getId() {
-        return id;
+    public Touch(String logId, List<String> touchs){
+        this.logId = "";
+        this.touchs = touchs;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getLogId() {
+    public String getLogId() {
         return logId;
     }
 
-    public void setLogId(int logId) {
+    public void setLogId(String logId) {
         this.logId = logId;
     }
 
-    public float getAxisX() {
-        return axisX;
+    public void setTouchs(List<String> touchs){
+        this.touchs = touchs;
     }
 
-    public void setAxisX(float axisX) {
-        this.axisX = axisX;
+    public List<String> getTouchs(){
+        return touchs;
     }
 
-    public float getAxisY() {
-        return axisY;
-    }
 
-    public void setAxisY(float axisY) {
-        this.axisY = axisY;
-    }
 }

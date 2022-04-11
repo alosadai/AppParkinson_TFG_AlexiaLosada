@@ -1,16 +1,11 @@
 package cat.tecnocampus.tfg.alexia.losada.appparkinson.domain;
 
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
 
 import java.util.Date;
 
-@Entity
 public class DailyLog {
 
-    @PrimaryKey(autoGenerate = true)
-    private int id;
-    private int userId;
+    private String userId;
     private String question;
     private String answer;
     private Date date;
@@ -18,26 +13,18 @@ public class DailyLog {
     public DailyLog(){
     }
 
-    public DailyLog(int userId, String question, String answer, Date date) {
+    public DailyLog(String userId, String question, String answer, Date date) {
         this.userId = userId;
         this.question = question;
         this.answer = answer;
         this.date = date;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -64,4 +51,5 @@ public class DailyLog {
     public void setDate(Date date) {
         this.date = date;
     }
+
 }

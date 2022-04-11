@@ -12,6 +12,7 @@ import cat.tecnocampus.tfg.alexia.losada.appparkinson.R;
 public class MainActivity extends AppCompatActivity {
 
     Button registerButton, loginButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

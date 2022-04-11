@@ -29,5 +29,10 @@
     <string name="cont">Continuar</string>
     <string name="feelings">Com et sents avui?</string>
     <string name="validate">Validar</string>
+    <string name="MoltB">Molt be</string>
+    <string name="Be">Be</string>
+    <string name="Millor">Millor que ahir</string>
+    <string name="Malament">Malament</string>
+    <string name="MMalament">Molt malament</string>
 
 </resources>
