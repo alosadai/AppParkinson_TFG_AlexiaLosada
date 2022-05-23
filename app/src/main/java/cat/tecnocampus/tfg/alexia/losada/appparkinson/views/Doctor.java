@@ -18,6 +18,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import cat.tecnocampus.tfg.alexia.losada.appparkinson.R;
+import cat.tecnocampus.tfg.alexia.losada.appparkinson.utils.Utils;
 import cat.tecnocampus.tfg.alexia.losada.appparkinson.domain.User;
 
 public class
@@ -30,8 +31,8 @@ Doctor extends AppCompatActivity {
     private Button validar, goBack;
     private EditText email;
     private TextView textEmail, emailAct;
+    private boolean firstDoctor;
 
-    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,8 @@ Doctor extends AppCompatActivity {
         firebaseFirestore = FirebaseFirestore.getInstance();
 
         userId = firebaseAuth.getCurrentUser().getUid();
+
+        firstDoctor = false;
 
         infoEmail();
 
@@ -78,7 +81,7 @@ Doctor extends AppCompatActivity {
         String currentEmail = "";
         String semail = email.getText().toString();
 
-        if(semail.matches("")||!semail.matches(emailPattern)){
+        if(semail.matches("")||!semail.matches(Utils.EMAILPATTERN)){
             Toast.makeText(this, "You did not enter a valid email", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -93,7 +96,6 @@ Doctor extends AppCompatActivity {
     }
 
     private void infoEmail(){
-
         DocumentReference docRef = firebaseFirestore.collection("user").document(userId);
         docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override

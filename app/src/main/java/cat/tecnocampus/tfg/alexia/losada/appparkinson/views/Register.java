@@ -3,7 +3,9 @@ package cat.tecnocampus.tfg.alexia.losada.appparkinson.views;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -20,10 +22,10 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import cat.tecnocampus.tfg.alexia.losada.appparkinson.R;
+import cat.tecnocampus.tfg.alexia.losada.appparkinson.utils.Utils;
 import cat.tecnocampus.tfg.alexia.losada.appparkinson.domain.User;
 
 public class Register extends AppCompatActivity {
@@ -34,7 +36,8 @@ public class Register extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseFirestore firebaseFirestore;
 
-    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,9 @@ public class Register extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         registerButton = findViewById(R.id.register_button);
+
+        preferences = this.getPreferences(Context.MODE_PRIVATE);
+        editor = preferences.edit();
 
         auth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
@@ -79,10 +85,10 @@ public class Register extends AppCompatActivity {
         } else if(ssurname.matches("")){
             Toast.makeText(this, "You did not enter a surname", Toast.LENGTH_SHORT).show();
             return;
-        } else if(spassword.matches("")){
-            Toast.makeText(this, "You did not enter a password", Toast.LENGTH_SHORT).show();
+        } else if(spassword.matches("") || spassword.length()<=5){
+            Toast.makeText(this, "You did not enter a password or may be to short", Toast.LENGTH_SHORT).show();
             return;
-        } else if(semail.matches("")||!semail.matches(emailPattern)){
+        } else if(semail.matches("")||!semail.matches(Utils.EMAILPATTERN)){
             Toast.makeText(this, "You did not enter a valid email", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -90,12 +96,8 @@ public class Register extends AppCompatActivity {
             auth.createUserWithEmailAndPassword(semail,spassword)
                     .addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
                         public void onComplete(@NonNull Task<AuthResult> task) {
-
-                            if (!task.isSuccessful()) {
-                                Toast.makeText(Register.this, "ERROR",Toast.LENGTH_LONG).show();
-                            }
-                            else {
-                                Toast.makeText(Register.this, "Usuari creat amb UID ="+auth.getCurrentUser().getUid(),Toast.LENGTH_LONG).show();
+                            if (task.isSuccessful()) {
+                                guardarCredencials(semail, spassword);
                                 createUser(semail, sname, ssurname, auth.getCurrentUser().getUid());
                             }
                         }
@@ -105,27 +107,29 @@ public class Register extends AppCompatActivity {
 
 
     private void createUser(String semail, String sname, String ssurname, String uid) {
-        System.out.println("Creant usuari");
         User user = new User(semail, sname, ssurname);
         firebaseFirestore.collection("user").document(uid).set(user)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        System.out.println("Success");
-                        Intent intent = new Intent(Register.this, Home.class);
-                        intent.putExtra("name", sname);
+                        Intent intent = new Intent(Register.this, Text.class);
+                        intent.putExtra("type", "dades");
                         startActivity(intent);
                         finish();
                     }
                 });
     }
 
+    private void guardarCredencials(String email, String password) {
+        editor.putString("Email", email);
+        editor.putString("Pswd", password);
+        editor.apply();
+    }
+
     private void showPassword(Boolean isChecked){
         if(isChecked){
-            //Show password
             password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
         }else{
-            //Hide password
             password.setTransformationMethod(PasswordTransformationMethod.getInstance());
         }
     }

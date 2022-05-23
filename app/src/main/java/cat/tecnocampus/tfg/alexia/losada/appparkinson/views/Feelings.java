@@ -7,16 +7,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import cat.tecnocampus.tfg.alexia.losada.appparkinson.api.JavaMailAPI;
 import cat.tecnocampus.tfg.alexia.losada.appparkinson.R;
 import cat.tecnocampus.tfg.alexia.losada.appparkinson.domain.DailyLog;
+import cat.tecnocampus.tfg.alexia.losada.appparkinson.domain.Touch;
+import cat.tecnocampus.tfg.alexia.losada.appparkinson.domain.User;
 
 import java.util.Calendar;
+import java.util.Date;
+
 
 public class Feelings extends AppCompatActivity {
 
@@ -46,6 +53,7 @@ public class Feelings extends AppCompatActivity {
         firebaseFirestore = FirebaseFirestore.getInstance();
 
         userId = firebaseAuth.getCurrentUser().getUid();
+
 
         answer1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,21 +88,60 @@ public class Feelings extends AppCompatActivity {
 
     }
 
-    private void menu(Button answer){
-        DailyLog dailyLog = new DailyLog(userId, question.getText().toString() , answer.getText().toString(), Calendar.getInstance().getTime());
+    private void menu(Button answer) {
+        DailyLog dailyLog = new DailyLog(userId, question.getText().toString(), answer.getText().toString(), Calendar.getInstance().getTime());
         firebaseFirestore.collection("dailyLog").add(dailyLog)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
                         addLogToTouch(documentReference.getId());
+                        sendMessage(question.getText().toString(), answer.getText().toString(), Calendar.getInstance().getTime());
                         finish();
                     }
                 });
     }
 
-    private void addLogToTouch(String logId){
+    private void addLogToTouch(String logId) {
         DocumentReference docRef = firebaseFirestore.collection("touchs").document(touchId);
         docRef.update("logId", logId);
+    }
+
+
+    private void sendMessage(String question, String answer, Date time) {
+        DocumentReference docRef = firebaseFirestore.collection("touchs").document(touchId);
+        docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Touch touch = documentSnapshot.toObject(Touch.class);
+                System.out.println("touch");
+                firebaseFirestore.collection("user").document(userId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        User user = documentSnapshot.toObject(User.class);
+                        if(user.getDoctor().equals("") || user.getDoctor() == null){
+                            Toast.makeText(Feelings.this, R.string.textNoEmail,
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            String  subject = "Registre diari del "+ user.getName() + " "+ time;
+                            String message = "<p>Registre diari del pacient "+ user.getName() + " a data: " + time +"\n"+
+                                    "<p>Coordenades dels tocs:</p>\n" +
+                                    "<ul>\n" ;
+                            for(String s : touch.getTouchs()){
+                                message = message + "<li>"+ s + "</li>\n";
+                            }
+                            message = message + "</ul>\n" +
+                                    "<p>Pregunta diaria:" + question+"</p>\n" +
+                                    "<p>Resposta:"+answer+" </p>";
+
+
+                            JavaMailAPI javaMailAPI = new JavaMailAPI(Feelings.this, user.getDoctor(), subject, message);
+                            javaMailAPI.execute();
+                        }
+                    }
+                });
+            }
+        });
     }
 
 }

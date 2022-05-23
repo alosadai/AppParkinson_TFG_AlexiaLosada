@@ -15,7 +15,7 @@ public class User {
         this.email = email;
         this.name = name;
         this.surname = surname;
-        this.doctor = "";
+        this.doctor = "logsparkinson@gmail.com";
 
     }
 

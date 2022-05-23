@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".views.Circle">
+
+    <View
+        android:id="@+id/ellipse_1"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ellipse_1" />
+
+    <View
+        android:id="@+id/ellipse_2"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ellipse_2" />
+
+    <View
+        android:id="@+id/left1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@id/ellipse_1"
+        android:background="@color/black" />
+
+    <View
+        android:id="@+id/left2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@id/ellipse_2"
+        android:background="@color/black" />
+
+    <View
+        android:id="@+id/right1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@id/ellipse_1"
+        android:background="@color/black" />
+
+    <View
+        android:id="@+id/right2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@id/ellipse_2"
+        android:background="@color/black" />
+
+    <View
+        android:id="@+id/left3"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@id/ellipse_2"
+        android:layout_marginLeft="30dp"
+        android:background="@color/black" />
+
+    <View
+        android:id="@+id/left4"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@id/ellipse_2"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="60dp"
+        android:background="@color/black" />
+
+    <View
+        android:id="@+id/left5"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@id/ellipse_2"
+        android:layout_marginLeft="90dp"
+        android:background="@color/black" />
+
+
+    <View
+        android:id="@+id/right3"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@id/ellipse_2"
+        android:layout_marginRight="30dp"
+        android:background="@color/black" />
+
+    <View
+        android:id="@+id/right4"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignRight="@id/ellipse_2"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="60dp"
+        android:background="@color/black" />
+
+    <View
+        android:id="@+id/right5"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@id/ellipse_2"
+        android:layout_marginRight="90dp"
+        android:background="@color/black" />
+
+    <View
+        android:id="@+id/top1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignTop="@id/ellipse_1"
+        android:layout_centerHorizontal="true"
+        android:background="@color/black" />
+
+    <View
+        android:id="@+id/top2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@id/ellipse_2"
+        android:background="@color/black" />
+
+    <View
+        android:id="@+id/bot1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@id/ellipse_1"
+        android:background="@color/black" />
+
+    <View
+        android:id="@+id/bot2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@id/ellipse_2"
+        android:background="@color/black" />
+
+    <View
+        android:id="@+id/top3"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@id/ellipse_2"
+        android:layout_marginTop="30dp"
+        android:background="@color/black" />
+
+    <View
+        android:id="@+id/top4"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@id/ellipse_2"
+        android:layout_marginTop="60dp"
+        android:background="@color/black" />
+
+    <View
+        android:id="@+id/top5"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@id/ellipse_2"
+        android:layout_marginTop="90dp"
+        android:background="@color/black" />
+
+
+    <View
+        android:id="@+id/bot3"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@id/ellipse_2"
+        android:layout_marginBottom="30dp"
+        android:background="@color/black" />
+
+    <View
+        android:id="@+id/bot4"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@id/ellipse_2"
+        android:layout_marginBottom="60dp"
+        android:background="@color/black" />
+
+    <View
+        android:id="@+id/bot5"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@id/ellipse_2"
+        android:layout_marginBottom="90dp"
+        android:background="@color/black" />
+
+
+    <View
+        android:id="@+id/center"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@color/black" />
+
+</RelativeLayout>

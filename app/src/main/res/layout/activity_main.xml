@@ -15,28 +15,41 @@
         android:background="@drawable/logo_white"
         />
 
-    <Button
-        android:id="@+id/register_button"
-        android:layout_width="328dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="475dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/register_button"
-        android:backgroundTint="@color/light_bronze"
-        android:text="@string/registrar_s"
-        />
 
 
-    <Button
-        android:id="@+id/login_button"
-        android:layout_width="330dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="575dp"
-        android:background="@drawable/login_button"
-        android:textColor="@color/black"
-        android:text="@string/iniciar_ses"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+        android:gravity="bottom"
+        >
+        <Button
+            android:id="@+id/register_button"
+            android:layout_width="328dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/register_button"
+            android:backgroundTint="@color/light_bronze"
+            android:text="@string/registrar_s"
+            />
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="330dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/login_button"
+            android:textColor="@color/black"
+            android:text="@string/iniciar_ses"/>
+
+    </LinearLayout>
+
+
 
 
 </RelativeLayout>

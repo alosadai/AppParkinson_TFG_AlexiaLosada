@@ -7,11 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+
 import cat.tecnocampus.tfg.alexia.losada.appparkinson.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button registerButton, loginButton;
+    private Button registerButton, loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +33,17 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+
     private void registrarse(){
         Intent intent = new Intent(this, Register.class);
         startActivity(intent);
+        finish();
     }
 
     private void login(){
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
+        finish();
     }
 }

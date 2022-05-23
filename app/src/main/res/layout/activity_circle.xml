@@ -7,22 +7,30 @@
     android:background="@color/white"
     tools:context=".views.Circle">
 
+    <TextView
+        android:id="@+id/counter"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        android:textAlignment="textEnd"
+        />
+
     <View
         android:id="@+id/ellipse_1"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/ellipse_1"
-        />
+        android:layout_centerInParent="true"
+        android:background="@drawable/ellipse_1" />
 
     <View
         android:id="@+id/ellipse_2"
         android:layout_width="230dp"
         android:layout_height="230dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/ellipse_2"
-        />
+        android:layout_centerInParent="true"
+        android:background="@drawable/ellipse_2" />
 
 </RelativeLayout>

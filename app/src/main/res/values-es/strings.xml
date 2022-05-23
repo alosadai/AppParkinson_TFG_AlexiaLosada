@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AppParkinson</string>
+    <string name="iniciar_ses">Iniciar sessión</string>
+    <string name="registrar_s">Registrarse</string>
+    <string name="title_activity_login">Login</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="email">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="name">Nombre</string>
+    <string name="surname">Apellidos</string>
+    <string name="showPassword">Mostrar contraseña</string>
+    <string name="welcome_back">Hola de nuevo</string>
+    <string name="diagnosis">Diagnosis</string>
+    <string name="logo">logo</string>
+    <string name="registre_diari">Registro diario</string>
+    <string name="doctor">Doctor</string>
+    <string name="metge">medico</string>
+    <string name="go_back">Volver atrás</string>
+    <string name="explaining">PRESIONA TANTAS VECES COMO PUEDAS EN EL CENTRO DEL CIRCULO</string>
+    <string name="permisos">Pulsando el botón continuar autorizo la captación de datos obtenidos durante los registros diarios de la aplicación AppParkinson para el uso exclusivo de anàlisis de los datos de parte del medico indicado y del Tecnocampus Mataró-Marseme, centro adscrito a la universidad Pompeu Fabra. \n \n \n Accepto que toda la información recogida durante los registros diarios són propiedad exclusiva de la autora del Trabajo de Final de Grado, del cual ha surgido la aplicación mòbil, i en este caso también del centro Tecnocampus Mataró-Maresme.</string>
+    <string name="okay">De acuerdo</string>
+    <string name="thanks">Gracias por haber hecho el registro diario, una última cosa...</string>
+    <string name="cont">Continuar</string>
+    <string name="feelings">¿Como te sientes hoy?</string>
+    <string name="validate">Validar</string>
+    <string name="MoltB">Muy bien</string>
+    <string name="Be">Bien</string>
+    <string name="Millor">Mejor que ayer</string>
+    <string name="Malament">Mal</string>
+    <string name="MMalament">Muy mal</string>
+    <string name="textEmail">El correo electrónico actual es:</string>
+    <string name="textNoEmail">No tienes ningún doctor asignado</string>
+    <string name="AuthFail">Autenticación fallida.</string>
+    <string name="exit">Salir</string>
+    <string name="logout">Cerrar sesión</string>
+</resources>

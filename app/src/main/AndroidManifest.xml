@@ -2,37 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cat.tecnocampus.tfg.alexia.losada.appparkinson">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo_white"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo_white"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
-            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.views.Doctor"
-            android:exported="false" />
-        <activity
-            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.views.Feelings"
-            android:exported="false" />
-        <activity
-            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.views.Circle"
-            android:exported="false" />
-        <activity
-            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.views.Text"
-            android:exported="false" />
-        <activity
-            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.views.Home"
-            android:exported="false" />
-        <activity
-            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.views.Register"
-            android:exported="false" />
-        <activity
-            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.views.Login"
-            android:exported="false" />
-        <activity
-            android:name="cat.tecnocampus.tfg.alexia.losada.appparkinson.views.MainActivity"
+            android:name=".views.Start"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,6 +21,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".views.Doctor"
+            android:exported="false" />
+        <activity
+            android:name=".views.Feelings"
+            android:exported="false" />
+        <activity
+            android:name=".views.Circle"
+            android:exported="false" />
+        <activity
+            android:name=".views.Text"
+            android:exported="false" />
+        <activity
+            android:name=".views.Home"
+            android:exported="false" />
+        <activity
+            android:name=".views.Register"
+            android:exported="false" />
+        <activity
+            android:name=".views.Login"
+            android:exported="false" />
+        <activity
+            android:name=".views.MainActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

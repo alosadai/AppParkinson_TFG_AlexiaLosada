@@ -29,6 +29,7 @@
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="2dp"
                 app:cardCornerRadius="45dp"
+                app:cardBackgroundColor="@color/white"
                 app:strokeColor="@color/light_bronze">
 
                 <ImageView
@@ -111,20 +112,32 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_marginTop="50dp"
-        android:gravity="bottom"
+        android:layout_marginBottom="30dp"
+        android:gravity="center|bottom"
         >
 
-    <Button
-        android:id="@+id/logout"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:background="@drawable/logout"
-        android:layout_marginBottom="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_gravity="bottom|end"
-        />
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@drawable/home_buttons"
+            android:textColor="@color/black"
+            android:text="@string/logout"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/exit"
+            android:layout_marginLeft="20dp"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@drawable/home_buttons"
+            android:textColor="@color/black"
+            android:text="@string/exit"
+            android:textAllCaps="false"
+            />
 
     </LinearLayout>
 
