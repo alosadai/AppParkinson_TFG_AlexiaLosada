@@ -9,7 +9,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -51,7 +50,7 @@ public class Login extends AppCompatActivity {
 
         firebaseAuth = firebaseAuth.getInstance();
 
-        revisarCredencials();
+        checkCredentials();
 
 
         showPassword.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -69,7 +68,7 @@ public class Login extends AppCompatActivity {
         });
     }
 
-    private void revisarCredencials() {
+    private void checkCredentials() {
         String semail = this.preferences.getString("Email", " ");
         String spassword = this.preferences.getString("Pswd", " ");
         if(!semail.equals(" ")){
@@ -78,7 +77,7 @@ public class Login extends AppCompatActivity {
         }
     }
 
-    private void guardarCredencials(String email, String password) {
+    private void saveCredentials(String email, String password) {
         editor.putString("Email", email);
         editor.putString("Pswd", password);
         editor.apply();
@@ -96,7 +95,7 @@ public class Login extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = firebaseAuth.getCurrentUser();
                             updateUI(user);
-                            guardarCredencials(semial, spassword);
+                            saveCredentials(semial, spassword);
                             Intent intent = new Intent(Login.this, Home.class);
                             startActivity(intent);
                             finish();

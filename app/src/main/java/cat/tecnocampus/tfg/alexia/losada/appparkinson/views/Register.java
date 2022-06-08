@@ -97,7 +97,7 @@ public class Register extends AppCompatActivity {
                     .addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                guardarCredencials(semail, spassword);
+                                saveCredentials(semail, spassword);
                                 createUser(semail, sname, ssurname, auth.getCurrentUser().getUid());
                             }
                         }
@@ -120,7 +120,7 @@ public class Register extends AppCompatActivity {
                 });
     }
 
-    private void guardarCredencials(String email, String password) {
+    private void saveCredentials(String email, String password) {
         editor.putString("Email", email);
         editor.putString("Pswd", password);
         editor.apply();

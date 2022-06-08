@@ -123,8 +123,8 @@ public class Feelings extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                         }
                         else{
-                            String  subject = "Registre diari del "+ user.getName() + " "+ time;
-                            String message = "<p>Registre diari del pacient "+ user.getName() + " a data: " + time +"\n"+
+                            String  subject = "Registre diari del "+ user.getName() + " " + user.getSurname() +" "+ time;
+                            String message = "<p>Registre diari del pacient "+ user.getName() + " " + user.getSurname() + " a data: " + time +"\n"+
                                     "<p>Coordenades dels tocs:</p>\n" +
                                     "<ul>\n" ;
                             for(String s : touch.getTouchs()){
