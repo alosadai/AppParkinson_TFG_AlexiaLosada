@@ -8,6 +8,7 @@ import android.os.CountDownTimer;
 import android.text.format.Time;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -41,7 +42,7 @@ public class Circle extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_circle);
 
-        elipse = findViewById(R.id.ellipse_1);
+        elipse = findViewById(R.id.ellipse_2);
         counter = findViewById(R.id.counter);
 
         touchs = new ArrayList<String>();
@@ -70,9 +71,10 @@ public class Circle extends AppCompatActivity {
                 } else{
                     touchs.add(c+ "  " + currentTime);
                 }
-                return true;
+                return false;
             }
         });
+
 
         CountDownTimer countDownTimer = new CountDownTimer(15000, 1000) {
             @Override
